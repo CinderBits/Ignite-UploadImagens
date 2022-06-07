@@ -63,7 +63,7 @@ export default function Home(): JSX.Element {
     )
   }
 
-  
+
   return (
     <>
       <Header />
@@ -71,16 +71,11 @@ export default function Home(): JSX.Element {
       <Box maxW={1120} px={20} mx="auto" my={20}>
         <CardList cards={formattedData} />
 
-        {hasNextPage && 
-          <Button 
-            onClick={fetchNextPage()} 
-            fontSize={`1rem`} color='white' 
-            bgColor={'orange.500'} 
-            mt='2rem'
-            fontFamily={'roboto'}>
-              {isFetchingNextPage ? 'Carregando ...' : 'Carregar Mais'}
-              </Button>
-        }
+        {hasNextPage && (
+          <Button onClick={() => fetchNextPage()} >
+              {isFetchingNextPage ? 'Carregando ...' : 'Carregar mais'}
+          </Button>
+        )}
 
       </Box>
     </>
